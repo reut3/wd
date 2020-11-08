@@ -32,7 +32,7 @@ static int SetEnvp(size_t interval_seconds, size_t num_of_cycles);
 static int ResetEnvp();
 static int SetMMIEnv();
 
-/*********************** Extern variables ***********************/
+/*********************** Static variables ***********************/
 static volatile pthread_t watch_thread_id = 0;
 static sem_t *mmi_sem = NULL;
 static char mmi_sem_name[MMI_SEM_BUF_SIZE] = "MMI_";

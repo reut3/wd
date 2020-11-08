@@ -1,9 +1,5 @@
-#define _GNU_SOURCE         /* sigaction, siginfo_t */
+#define _GNU_SOURCE         
 #include <stdlib.h>         /* setenv */
-#include <semaphore.h>      /* semaphore */
-#include <fcntl.h>          /* For O_* constants */
-#include <sys/stat.h>       /* For mode constants S_*/
-#include <stdio.h>          /* sprintf */
 #include <assert.h>         /* assert */
 #include <unistd.h>         /* getppid */
 
@@ -11,9 +7,6 @@
 
 #define NOT_USED(x) ((void)(x))
 #define FAILED (-1)
-#define SEM_PERMS (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP)
-#define DNR_SEM_BUF_SIZE (16)
-
 
 static void FillClientInfo(proc_to_watch_info_t *client_info, char *argv[])
 {
@@ -25,7 +18,6 @@ static void FillClientInfo(proc_to_watch_info_t *client_info, char *argv[])
 
 int main (int argc, char *argv[])
 {
-    /* sem_t *dnr_sem = NULL; */
     int status = setenv("WD", "WD", 0);
     proc_to_watch_info_t client_info = {0};
 

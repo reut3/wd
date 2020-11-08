@@ -13,13 +13,6 @@
 #include "watchdog_mmi_dnr.h"
 #include "watch_module.h"
 
-typedef struct mmi_info
-{
-    char const **argv;
-    size_t num_of_cycles;
-    size_t interval_seconds;
-} mmi_info_t;
-
 /*********************** macros ***********************/
 #define SEM_PERMS (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP)
 #define SUCCESS (0)
